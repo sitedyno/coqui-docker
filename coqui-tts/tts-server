@@ -40,9 +40,8 @@ fi
 
 "${docker}" run \
             -it \
-            -e "HOME=${HOME}" \
-            -v "$HOME:${HOME}" \
-            -w "${PWD}" \
+            -v "coqui-docker-tts:/root" \
+            -w "/root" \
             -p 5002:5002 \
             --user "$(id -u):$(id -g)" \
             --entrypoint 'tts-server' \
